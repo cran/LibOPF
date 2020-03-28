@@ -1,4 +1,4 @@
-a0d458ad153fe3727d53c8c1b8ed0733 *DESCRIPTION
+b3cfa438af401ec8f1e800bf7d45d79d *DESCRIPTION
 4283fc8ff21b13341f2c51f2e314e97c *LICENSE
 511a2a31b2a8d0a09f07b44af07e0b84 *NAMESPACE
 62b5e69ab0ff8b1592217a9ed17cd77e *R/LibOPF.R
@@ -45,8 +45,8 @@ f7c27f94aa6b2907d51fe70615be0c29 *man/opf_write_distances.Rd
 95306db3a2a6874668b2e26d81650aea *man/subGraph-class.Rd
 e24e31be0f6a34513b64f7835e39cca1 *man/svm2opf.Rd
 9a30ee911948534c55b6960ac7cdc556 *man/txt2opf.Rd
-3a1f367de5268ad192484d14d44be1e1 *src/Makevars
-231d3604e37ea429bb66cf0b50bbfb38 *src/Makevars.win
+91b7acb38871fc16c7421ec30a7d883d *src/Makevars
+1c77bee1c3631a0209575b0bea525bd7 *src/Makevars.win
 61d74fa93853e12cf8d42c98f1f13e37 *src/code/OPF.c
 5631617f78cc66155d630a60a6608026 *src/code/opf_accuracy.c
 b1a9babf6a6d9c328411dc687205db9b *src/code/opf_accuracy4label.c
