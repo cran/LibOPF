@@ -1,7 +1,7 @@
 Package: LibOPF
 Type: Package
 Title: Design of Optimum-Path Forest Classifiers
-Version: 2.5.0
+Version: 2.6.0
 Authors@R: c(
     person("Rafael", "Junqueira Martarelli", email = "rfel.jm@gmail.com", role = c("aut","cre")),
     person("João", "Paulo Papa", role = "aut"),
@@ -19,9 +19,9 @@ URL: https://github.com/RafaelJM/LibOPF-in-R,
 BugReports: https://github.com/RafaelJM/LibOPF-in-R/issues
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
-Packaged: 2020-03-26 20:21:02 UTC; RJM
+Packaged: 2020-04-11 20:27:35 UTC; RJM
 Author: Rafael Junqueira Martarelli [aut, cre],
   João Paulo Papa [aut],
   Alexandre Xavier Falcão [cph]
 Repository: CRAN
-Date/Publication: 2020-03-28 08:20:28 UTC
+Date/Publication: 2020-04-12 14:20:06 UTC
