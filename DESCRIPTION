@@ -1,7 +1,7 @@
 Package: LibOPF
 Type: Package
 Title: Design of Optimum-Path Forest Classifiers
-Version: 2.6.0
+Version: 2.6.1
 Authors@R: c(
     person("Rafael", "Junqueira Martarelli", email = "rfel.jm@gmail.com", role = c("aut","cre")),
     person("João", "Paulo Papa", role = "aut"),
@@ -12,16 +12,15 @@ Description: The 'LibOPF' is a framework to develop pattern recognition techniqu
 Imports: methods
 License: BSD_2_clause + file LICENSE
 Encoding: UTF-8
-LazyData: true
-URL: https://github.com/RafaelJM/LibOPF-in-R,
-        https://github.com/jppbsi/LibOPF/wiki,
-        http://www.ic.unicamp.br/~afalcao/libopf/
-BugReports: https://github.com/RafaelJM/LibOPF-in-R/issues
+URL: https://github.com/RafaelJM/LibOPF-in-R/,
+        https://github.com/jppbsi/LibOPF/wiki/,
+        https://www.ic.unicamp.br/~afalcao/libopf/
+BugReports: https://github.com/RafaelJM/LibOPF-in-R/issues/
 RoxygenNote: 7.0.2
 NeedsCompilation: yes
-Packaged: 2020-04-11 20:27:35 UTC; RJM
+Packaged: 2021-04-04 23:58:21 UTC; rfelj
 Author: Rafael Junqueira Martarelli [aut, cre],
   João Paulo Papa [aut],
   Alexandre Xavier Falcão [cph]
 Repository: CRAN
-Date/Publication: 2020-04-12 14:20:06 UTC
+Date/Publication: 2021-04-07 10:20:07 UTC
