@@ -6,7 +6,7 @@ void c_opf_cluster(int *argc, char **argv)
 	opf_PrecomputedDistance = 0;
 	int i, n, op;
 	float value;
-	char fileName[256];
+	char fileName[4096];
 
 	if ((*argc != 6) && (*argc != 5))
 	{
@@ -99,14 +99,14 @@ void c_opf_cluster(int *argc, char **argv)
 
 	Rprintf("\nWriting classifier's model file ...");
 	
-	sprintf(fileName, "%s.classifier.opf", argv[1]);
+	snprintf(fileName, 4096, "%s.classifier.opf", argv[1]);
 	opf_WriteModelFile(g, fileName);
 	Rprintf(" OK");
 	
 
 	Rprintf("\nWriting output file ...");
 	
-	sprintf(fileName, "%s.out", argv[1]);
+	snprintf(fileName, 4096, "%s.out", argv[1]);
 	opf_WriteOutputFile(g, fileName);
 	Rprintf(" OK");
 	

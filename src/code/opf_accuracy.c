@@ -17,7 +17,7 @@ void c_opf_accuracy(int *argc, char **argv)
 	;
 	float Acc, tmp;
 	FILE *f = NULL;
-	char fileName[256];
+	char fileName[4096];
 
 	Rprintf("\nReading data file ...");
 	
@@ -27,7 +27,7 @@ void c_opf_accuracy(int *argc, char **argv)
 
 	Rprintf("\nReading output file ...");
 	
-	sprintf(fileName, "%s.out", argv[1]);
+	snprintf(fileName, 4096, "%s.out", argv[1]);
 	f = fopen(fileName, "r");
 	if (!f)
 	{
@@ -66,7 +66,7 @@ void c_opf_accuracy(int *argc, char **argv)
 
 	Rprintf("\nWriting accuracy in output file ...");
 	
-	sprintf(fileName, "%s.acc", argv[1]);
+	snprintf(fileName, 4096, "%s.acc", argv[1]);
 	f = fopen(fileName, "a");
 	fprintf(f, "%f\n", Acc * 100);
 	fclose(f);

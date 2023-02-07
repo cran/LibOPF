@@ -16,7 +16,7 @@ void c_opf_pruning(int *argc, char **argv)
 
 	int n, i, isize, fsize;
 	float time, desiredAcc = atof(argv[3]), prate;
-	char fileName[256];
+	char fileName[4096];
 	FILE *f = NULL;
 	timer tic, toc;
 
@@ -48,13 +48,13 @@ void c_opf_pruning(int *argc, char **argv)
 
 	Rprintf("\n\nWriting classifier's model file ...");
 	
-	sprintf(fileName, "%s.classifier.opf", argv[1]);
+	snprintf(fileName, 4096, "%s.classifier.opf", argv[1]);
 	opf_WriteModelFile(gTrain, fileName);
 	Rprintf(" OK");
 	
 	Rprintf(" OK");
 	
-	sprintf(fileName, "%s.prate.pr", argv[1]);
+	snprintf(fileName, 4096, "%s.prate.pr", argv[1]);
 	f = fopen(fileName, "a");
 	fprintf(f, "%f\n", prate);
 	fclose(f);
@@ -62,7 +62,7 @@ void c_opf_pruning(int *argc, char **argv)
 	time = ((toc.tv_sec - tic.tv_sec) * 1000.0 + (toc.tv_usec - tic.tv_usec) * 0.001) / 1000.0;
 	Rprintf("\nPruning time: %f seconds\n", time);
 	
-	sprintf(fileName, "%s.time", argv[1]);
+	snprintf(fileName, 4096, "%s.time", argv[1]);
 	f = fopen(fileName, "a");
 	fprintf(f, "%f\n", time);
 	fclose(f);

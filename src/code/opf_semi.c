@@ -16,7 +16,7 @@ void c_opf_semi(int *argc, char **argv)
 
   int n, i;
   int opf_ComputeEvaluation = 0;
-  char fileName[256];
+  char fileName[4096];
   FILE *f = NULL;
   timer tic, toc;
   float time;
@@ -64,7 +64,7 @@ void c_opf_semi(int *argc, char **argv)
 
   Rprintf("\nWriting classifier's model file ...");
   
-  sprintf(fileName, "%s.classifier.opf", argv[1]);
+  snprintf(fileName, 4096, "%s.classifier.opf", argv[1]);
   opf_WriteModelFile(g, fileName);
   Rprintf(" OK");
   
@@ -72,7 +72,7 @@ void c_opf_semi(int *argc, char **argv)
   Rprintf("\nWriting output file ...");
   
 
-  sprintf(fileName, "%s.out", argv[1]);
+  snprintf(fileName, 4096, "%s.out", argv[1]);
   opf_WriteOutputFile(s, fileName);
   Rprintf(" OK");
   
@@ -92,7 +92,7 @@ void c_opf_semi(int *argc, char **argv)
   Rprintf("\nExecution time: %f seconds\n", time);
   
 
-  sprintf(fileName, "%s.time", argv[1]);
+  snprintf(fileName, 4096, "%s.time", argv[1]);
   f = fopen(fileName, "a");
   fprintf(f, "%f\n", time);
   fclose(f);

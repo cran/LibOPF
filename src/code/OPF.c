@@ -1048,11 +1048,11 @@ Subgraph *opf_ReadModelFile(char *file)
   Subgraph *g = NULL;
   FILE *fp = NULL;
   int nnodes, i, j;
-  char msg[256];
+  char msg[4096];
 
   if ((fp = fopen(file, "rb")) == NULL)
   {
-    sprintf(msg, "%s%s", "Unable to open file ", file);
+    snprintf (msg, 4096, "Unable to open file %s", file);
     Error(msg, "ReadSubGraph"); if(errorOccurred) return(NULL);
   }
 
@@ -1247,7 +1247,7 @@ Subgraph **kFoldSubgraph(Subgraph *sg, int k)
   int totelems, foldsize = 0, i, *label = (int *)calloc((sg->nlabels + 1), sizeof(int));
   int *nelems = (int *)calloc((sg->nlabels + 1), sizeof(int)), j, z, w, m, n;
   int *nelems_aux = (int *)calloc((sg->nlabels + 1), sizeof(int)), *resto = (int *)calloc((sg->nlabels + 1), sizeof(int));
-  char msg[100];
+  char msg[4096];
 
   for (i = 0; i < sg->nnodes; i++)
   {
@@ -1259,7 +1259,7 @@ Subgraph **kFoldSubgraph(Subgraph *sg, int k)
   {
     if (label[i] < k)
     {
-      sprintf(msg, "You do not have a sufficient amount of samples from class %d", i);
+      snprintf (msg, 4096, "You do not have a sufficient amount of samples from class %d", i);
       Error(msg, "kFoldSubgraph"); if(errorOccurred) return(NULL);
       return(NULL);
     }
@@ -1727,13 +1727,13 @@ float **opf_ReadDistances(char *fileName, int *n)
   int nsamples, i;
   FILE *fp = NULL;
   float **M = NULL;
-  char msg[256];
+  char msg[4096];
 
   fp = fopen(fileName, "rb");
 
   if (fp == NULL)
   {
-    sprintf(msg, "%s%s", "Unable to open file ", fileName);
+    snprintf (msg, 4096, "Unable to open file %s", fileName);
     Error(msg, "opf_ReadDistances"); return(NULL);
   }
 

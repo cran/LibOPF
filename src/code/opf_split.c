@@ -33,7 +33,7 @@ void c_opf_split(int *argc, char **argv)
 	Subgraph *g = NULL, *gAux = NULL, *gTraining = NULL, *gEvaluating = NULL, *gTesting = NULL;
 	float training_p = atof(argv[2]), evaluating_p = atof(argv[3]), testing_p = atof(argv[4]);
 	int normalize = atoi(argv[5]);
-	char fileName[256];
+	char fileName[4096];
 
 	CheckInputData(training_p, evaluating_p, testing_p); if(errorOccurred) return;
 
@@ -63,13 +63,13 @@ void c_opf_split(int *argc, char **argv)
 
 	Rprintf("\nWriting data sets to disk ...");
 	
-	sprintf(fileName, "%s.training.dat", argv[1]);
+	snprintf(fileName, 4096, "%s.training.dat", argv[1]);
 	WriteSubgraph(gTraining, fileName); if(errorOccurred) return;
 	if (evaluating_p > 0){
-		sprintf(fileName, "%s.evaluating.dat", argv[1]);
+		snprintf(fileName, 4096, "%s.evaluating.dat", argv[1]);
 		WriteSubgraph(gEvaluating, fileName); if(errorOccurred) return;
 	}
-	sprintf(fileName, "%s.testing.dat", argv[1]);
+	snprintf(fileName, 4096, "%s.testing.dat", argv[1]);
 	WriteSubgraph(gTesting, fileName); if(errorOccurred) return;
 	Rprintf(" OK");
 	

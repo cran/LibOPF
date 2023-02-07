@@ -14,7 +14,7 @@ void c_opf_classify(int *argc, char **argv)
 
 	int n, i;
 	float time;
-	char fileName[256];
+	char fileName[4096];
 	FILE *f = NULL;
 	timer tic, toc;
 
@@ -22,7 +22,7 @@ void c_opf_classify(int *argc, char **argv)
 		opf_PrecomputedDistance = 1;
 	Rprintf("\nReading data files ...");
 	
-	sprintf(fileName, "%s.classifier.opf", argv[1]);
+	snprintf(fileName, 4096, "%s.classifier.opf", argv[1]);
 	Subgraph *gTest = ReadSubgraph(argv[1]), *gTrain = opf_ReadModelFile(fileName); if(errorOccurred) return;
 	Rprintf(" OK");
 	
@@ -41,7 +41,7 @@ void c_opf_classify(int *argc, char **argv)
 
 	Rprintf("\nWriting output file ...");
 	
-	sprintf(fileName, "%s.out", argv[1]);
+	snprintf(fileName, 4096, "%s.out", argv[1]);
 	opf_WriteOutputFile(gTest, fileName);
 	Rprintf(" OK");
 	
@@ -61,7 +61,7 @@ void c_opf_classify(int *argc, char **argv)
 	Rprintf("\nTesting time: %f seconds\n", time);
 	
 
-	sprintf(fileName, "%s.time", argv[1]);
+	snprintf(fileName, 4096, "%s.time", argv[1]);
 	f = fopen(fileName, "a");
 	fprintf(f, "%f\n", time);
 	fclose(f);

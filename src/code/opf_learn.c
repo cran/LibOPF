@@ -14,7 +14,7 @@ void c_opf_learn(int *argc, char **argv)
 	}
 
 	float Acc, time;
-	char fileName[512];
+	char fileName[4096];
 	int i, n;
 	timer tic, toc;
 	FILE *f = NULL;
@@ -46,7 +46,7 @@ void c_opf_learn(int *argc, char **argv)
 
 	Rprintf("\n\nWriting classifier's model file ...");
 	
-	sprintf(fileName, "%s.classifier.opf", argv[1]);
+	snprintf(fileName, 4096, "%s.classifier.opf", argv[1]);
 	opf_WriteModelFile(gTrain, fileName);
 	Rprintf(" OK");
 	
@@ -63,7 +63,7 @@ void c_opf_learn(int *argc, char **argv)
 	Rprintf(" OK\n");
 	
 
-	sprintf(fileName, "%s.time", argv[1]);
+	snprintf(fileName, 4096, "%s.time", argv[1]);
 	f = fopen(fileName, "a");
 	fprintf(f, "%f\n", time);
 	fclose(f);

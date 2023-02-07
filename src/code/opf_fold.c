@@ -15,7 +15,7 @@ void c_opf_fold(int *argc, char **argv)
 	}
 	Subgraph *g = NULL, **fold = NULL;
 	int k = atoi(argv[2]), i, op = atoi(argv[3]);
-	char fileName[255];
+	char fileName[4096];
 
 	Rprintf("\nReading data set ...");
 	
@@ -32,7 +32,7 @@ void c_opf_fold(int *argc, char **argv)
 	{
 		Rprintf("\nWriting fold %d ...", i + 1);
 			
-		sprintf(fileName, "%s%d",argv[1],(i+1));
+		snprintf(fileName, 4096, "%s%d",argv[1],(i+1));
 		if (op){
 			opf_NormalizeFeatures(fold[i]); if(errorOccurred) return;
 		}

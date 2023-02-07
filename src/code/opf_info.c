@@ -16,11 +16,11 @@ void c_opf_info(int *argc, char **argv)
 	Subgraph *g = NULL;
 	FILE *fp = NULL;
 	int ndata, nfeats, nlabels;
-	char msg[128];
+	char msg[4096];
 
 	if ((fp = fopen(argv[1], "rb")) == NULL)
 	{
-		sprintf(msg, "%s%s", "Unable to open file ", argv[1]);
+		snprintf(msg, 4096, "Unable to open file %s", argv[1]);
 		Error(msg, "opf_info"); return;
 	}
 

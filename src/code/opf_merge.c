@@ -15,7 +15,7 @@ void c_opf_merge(int *argc, char **argv)
 	}
 	Subgraph **g = (Subgraph **)malloc(sizeof(Subgraph **) * (*argc - 1)), *merged = NULL, *aux = NULL;
 	int i;
-	char fileName[512];
+	char fileName[4096];
 	
 	Rprintf("\nReading data sets ...");
 	
@@ -36,7 +36,7 @@ void c_opf_merge(int *argc, char **argv)
 
 	Rprintf("\nWriting data set to disk ...");
 	
-	sprintf(fileName, "%s.merged.dat", argv[1]);
+	snprintf(fileName, 4096, "%s.merged.dat", argv[1]);
 	WriteSubgraph(aux, fileName); if(errorOccurred) return;
 	Rprintf(" OK");
 	
